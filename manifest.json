@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "picoCTF Gen Score Extension",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Generate and display picoCTF score on the user profile and practice page based on the difficulty of each solved challenge.",
   "action": {
     "default_popup": "popup.html",
@@ -19,5 +19,8 @@
       ],
       "js": ["practice_page.js", "user_page.js"]
     }
-  ]
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; connect-src https://* data: blob: filesystem:;"
+  }
 }
