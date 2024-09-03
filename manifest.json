@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "picoCTF Gen Score Extension",
+  "version": "1.0",
+  "description": "Automatically generate and display picoCTF score on the user profile and practice page based on the difficulty of each solved challenge.",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "assets/icon.png"
+    }
+  },
+  "icons": {
+    "128": "assets/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://play.picoctf.org/*"
+      ],
+      "js": ["practice_page.js", "user_page.js"]
+    }
+  ]
+}
