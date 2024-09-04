@@ -33,23 +33,26 @@
                     });
 
                     // Check if the score is already displayed to avoid duplication
-                    if (!document.querySelector('.practice-picoGym-score')) {
-                        // Find the Progress Tracker card element
-                        const progressTrackerCard = document.querySelector('.card .collapse.show').parentElement;
-
-                        if (progressTrackerCard) {
-                            // Create and insert a new score display element
-                            const scoreDisplay = document.createElement('div');
-                            scoreDisplay.classList.add('practice-picoGym-score'); // Add class name to avoid duplication
-                            scoreDisplay.style.textAlign = 'center';
-                            scoreDisplay.style.fontSize = '24px';
-                            scoreDisplay.style.fontWeight = 'bold';
-                            scoreDisplay.style.marginBottom = '20px';
-                            scoreDisplay.style.color = '#6C63FF';  // Purple color
-                            scoreDisplay.innerText = `picoGym Score: ${totalScore}`;
-
+                    // Find the Progress Tracker card element
+                    const progressTrackerCard = document.querySelector('.card .collapse.show').parentElement;
+                    
+                    if (progressTrackerCard) {
+                        // Create and insert a new score display element
+                        const scoreDisplay = document.createElement('div');
+                        scoreDisplay.classList.add('practice-picoGym-score'); // Add class name to avoid duplication
+                        scoreDisplay.style.textAlign = 'center';
+                        scoreDisplay.style.fontSize = '24px';
+                        scoreDisplay.style.fontWeight = 'bold';
+                        scoreDisplay.style.marginBottom = '20px';
+                        scoreDisplay.style.color = '#6C63FF';  // Purple color
+                        scoreDisplay.innerText = `picoGym Score: ${totalScore}`;
+                        
+                        if (!document.querySelector('.practice-picoGym-score')) {
                             // Insert the score element into the last child of the Progress Tracker card
                             progressTrackerCard.appendChild(scoreDisplay);
+                        } else {
+                            // Update the score element
+                            document.querySelector('.practice-picoGym-score').innerText = `picoGym Score: ${totalScore}`;
                         }
                     }
                 }

@@ -3,11 +3,6 @@
         // Check if the current page URL is https://play.picoctf.org/users/*
         if (window.location.href.includes('https://play.picoctf.org/users/')) {
 
-            // Check if the score is already displayed to avoid duplication
-            if (document.querySelector('.picoGym-score')) {
-                return; // Score already exists, terminate the script
-            }
-
             // Define score mapping
             const scoreMapping = {
                 'Easy': 100,
@@ -48,8 +43,11 @@
                     scoreDisplay.style.color = '#6C63FF';  // Purple color
                     scoreDisplay.innerText = `picoGym Score: ${totalScore}`;
 
-                    // Insert the score element at the bottom of the picoGym Progress card
-                    picoGymCardBody.parentElement.appendChild(scoreDisplay);
+                    if (!document.querySelector('.picoGym-score')) {
+                        picoGymCardBody.parentElement.appendChild(scoreDisplay);
+                    } else {
+                        document.querySelector('.picoGym-score').innerText = `picoGym Score: ${totalScore}`;
+                    }
                 }
             }
         }
