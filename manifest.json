@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "picoCTF Gen Score Extension",
-  "version": "1.0.1",
+  "author": "MoonJam",
+  "version": "1.0.2",
   "description": "Generate and display picoCTF score on the user profile and practice page based on the difficulty of each solved challenge.",
   "action": {
     "default_popup": "popup.html",

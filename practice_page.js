@@ -1,7 +1,7 @@
 (function() {
     setInterval(() => {
         // Check if the current page is https://play.picoctf.org/practice
-        if (window.location.href === 'https://play.picoctf.org/practice') {
+        if (window.location.href.includes('https://play.picoctf.org/practice')) {
             // Define score mapping
             const scoreMapping = {
                 'Easy': 100,
