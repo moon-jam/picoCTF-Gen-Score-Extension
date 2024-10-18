@@ -11,7 +11,7 @@ This Chrome extension can automatically generate and display picoCTF score on th
 
 - Easy: 100 points
 - Medium: 200 points
-- Hard: 300 points
+- Hard: 500 points
 
 ## License
 

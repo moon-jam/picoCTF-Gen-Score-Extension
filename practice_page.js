@@ -6,7 +6,7 @@
             const scoreMapping = {
                 'Easy': 100,
                 'Medium': 200,
-                'Hard': 300
+                'Hard': 500
             };
 
             let totalScore = 0;
